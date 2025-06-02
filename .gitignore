@@ -1,0 +1,7 @@
+# Python
+crytpo_exchange_news/__pycache__
+*.json
+*.csv
+*.xlsx
+*.pyc
+.DS_Store

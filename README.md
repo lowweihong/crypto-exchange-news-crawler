@@ -98,6 +98,13 @@ Key settings in `settings.py`:
 - `PROXY_LIST`: Fill the list with your proxy list and remember also to open uncomment the DOWNLOADER_MIDDLEWARES part to use the proxy middleware
 - `PLAYWRIGHT_LAUNCH_OPTIONS`: Browser configuration for Playwright spiders
 
+## Example website
+
+Example link for each crypto exchange:
+
+1. Bitget: https://www.bitget.com/support/sections/12508313443483
+2. Bitfinex: https://www.bitfinex.com/posts/
+
 ## Data Structure
 
 Each news item contains the following fields:
@@ -114,15 +121,6 @@ Each news item contains the following fields:
     "timestamp": "Crawl timestamp (Unix)"
 }
 ```
-
-### Sample Bitget Categories
-
-The Bitget spider extracts detailed categories such as:
-- `Latest News.Bitget News`
-- `New Listings.Spot`
-- `New Listings.Futures`
-- `Competitions and promotions.Ongoing competitions and promotions`
-- `Maintenance or system updates.System Updates`
 
 ## Technical Requirements
 

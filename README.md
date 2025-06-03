@@ -95,7 +95,7 @@ Key settings in `settings.py`:
 - `DOWNLOAD_DELAY`: Delay between requests in seconds (default: 3)
 - `CONCURRENT_REQUESTS`: Number of concurrent requests (default: 8)
 - `USER_AGENT`: List of user agents for rotation
-- `PROXY_LIST`: Optional proxy configuration (currently disabled)
+- `PROXY_LIST`: Fill the list with your proxy list and remember also to open uncomment the DOWNLOADER_MIDDLEWARES part to use the proxy middleware
 - `PLAYWRIGHT_LAUNCH_OPTIONS`: Browser configuration for Playwright spiders
 
 ## Data Structure

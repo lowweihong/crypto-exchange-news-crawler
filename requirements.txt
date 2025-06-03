@@ -1,9 +1,3 @@
-# Core Scrapy framework - required for the spider functionality
 Scrapy>=2.11.0
-
-# Note: The following modules are built-in Python modules used in bitfinex.py:
-# - json (for parsing API responses)
-# - random (for user agent selection)  
-# - time (for timestamp generation)
-# - urllib.parse (for URL encoding)
-# These don't need to be installed as they come with Python 
+scrapy-playwright>=0.0.25
+playwright>=1.40.0

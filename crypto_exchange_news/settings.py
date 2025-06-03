@@ -1,4 +1,4 @@
-# Scrapy settings for crytpo_exchange_news project
+# Scrapy settings for crypto_exchange_news project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,17 +7,17 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'crytpo_exchange_news'
+BOT_NAME = 'crypto_exchange_news'
 
-SPIDER_MODULES = ['crytpo_exchange_news.spiders']
-NEWSPIDER_MODULE = 'crytpo_exchange_news.spiders'
+SPIDER_MODULES = ['crypto_exchange_news.spiders']
+NEWSPIDER_MODULE = 'crypto_exchange_news.spiders'
 
 USER_AGENT = ['Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.6998.166 Safari/537.36',
               'Mozilla/5.0 (Windows 7 Enterprise; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.6099.71 Safari/537.36',
               'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:138.0) Gecko/20100101 Firefox/138.0',
               'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:137.0) Gecko/20100101 Firefox/137.0']
 
-
+PLAYWRIGHT_LAUNCH_OPTIONS = {"headless": True}
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
 
@@ -51,13 +51,13 @@ PROXY_LIST = []
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'crytpo_exchange_news.middlewares.CrytpoExchangeNewsSpiderMiddleware': 543,
+#    'crypto_exchange_news.middlewares.CrytpoExchangeNewsSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 # DOWNLOADER_MIDDLEWARES = {
-#     'crytpo_exchange_news.middlewares.MyProxyMiddleware': 543
+#     'crypto_exchange_news.middlewares.MyProxyMiddleware': 543
 # }
 
 # Enable or disable extensions
@@ -69,7 +69,7 @@ PROXY_LIST = []
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    'crytpo_exchange_news.pipelines.CrytpoExchangeNewsPipeline': 300,
+#    'crypto_exchange_news.pipelines.CrytpoExchangeNewsPipeline': 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -92,3 +92,5 @@ PROXY_LIST = []
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+REQUEST_FINGERPRINTER_IMPLEMENTATION = '2.7'
+TWISTED_REACTOR = 'twisted.internet.asyncioreactor.AsyncioSelectorReactor'

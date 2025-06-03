@@ -47,12 +47,12 @@ class BitfinexSpider(scrapy.Spider):
         # Process current page data here - yield items
         for item in data:
             yield {
+                "news_id": item[0],
                 "title": item[3],
                 "desc": item[4],
                 "url": "https://www.bitfinex.com/posts/" + str(item[0]),
                 "category_str": "",
                 "exchange": self.name,
-                "news_id": item[0],
                 "announced_at_timestamp": item[1] //1000,
                 "timestamp": int(time.time()),
             }

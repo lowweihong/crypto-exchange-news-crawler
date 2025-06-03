@@ -31,14 +31,13 @@ class BitfinexSpider(scrapy.Spider):
     url = "https://api-pub.bitfinex.com/v2/posts/hist/?"
 
     def start_requests(self):
-        params = {"limit": 20, "type": 1}
 
         yield scrapy.Request(
-            url=self.url + urlencode(params),
+            url=self.url + urlencode(self.params),
             headers=self.headers,
             callback=self.parse,
             meta={"page": 1},
-            cb_kwargs={"params": params},
+            cb_kwargs={"params": self.params},
         )
 
     def parse(self, response, params=None):

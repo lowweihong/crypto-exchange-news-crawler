@@ -37,6 +37,8 @@ COOKIES_ENABLED = False
 
 MAX_PAGE = 2
 
+PROXY_LIST = []
+
 # Disable Telnet Console (enabled by default)
 #TELNETCONSOLE_ENABLED = False
 
@@ -54,9 +56,9 @@ MAX_PAGE = 2
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
-#DOWNLOADER_MIDDLEWARES = {
-#    'crytpo_exchange_news.middlewares.CrytpoExchangeNewsDownloaderMiddleware': 543,
-#}
+DOWNLOADER_MIDDLEWARES = {
+    'crytpo_exchange_news.middlewares.MyProxyMiddleware': 543
+}
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html

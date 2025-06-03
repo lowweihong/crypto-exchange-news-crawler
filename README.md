@@ -46,7 +46,7 @@ crytpo_exchange_news/
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/lowweihong/crypto-exchange-news-crawler.git
 cd crytpo_exchange_news
 ```
 

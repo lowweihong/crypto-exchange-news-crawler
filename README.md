@@ -17,6 +17,7 @@ This project crawls announcement news from cryptocurrency exchanges to help user
 
 - **Bitfinex** 
 - **Bitget** 
+- **XT**
 
 
 ## Installation
@@ -47,27 +48,15 @@ playwright install chromium
 
 ### Running the Bitfinex Spider
 
-To crawl news from Bitfinex (API-based, faster):
+Supported platform
+1. bitget
+2. xt
+3. bitfinex
+
+Run the below command to crawl:
 
 ```bash
-scrapy crawl bitfinex
-```
-
-### Running the Bitget Spider
-
-To crawl news from Bitget (browser-based, comprehensive):
-
-```bash
-scrapy crawl bitget
-```
-
-### Running All Spiders
-
-To crawl from all supported exchanges:
-
-```bash
-scrapy crawl bitfinex
-scrapy crawl bitget
+scrapy crawl <platform>
 ```
 
 ### Export to JSON
@@ -104,6 +93,7 @@ Example link for each crypto exchange:
 
 1. Bitget: https://www.bitget.com/support/sections/12508313443483
 2. Bitfinex: https://www.bitfinex.com/posts/
+3. XT: https://xtsupport.zendesk.com/hc/en-us/categories/10304894611993-Important-Announcements
 
 ## Data Structure
 
@@ -116,7 +106,7 @@ Each news item contains the following fields:
     "desc": "News description/content",
     "url": "Full URL to the news article",
     "category_str": "News category (detailed for Bitget)",
-    "exchange": "Exchange name ('bitfinex' or 'bitget')",
+    "exchange": "Exchange name ('bitfinex' or 'bitget' or 'xt')",
     "announced_at_timestamp": "Original publication timestamp (Unix)",
     "timestamp": "Crawl timestamp (Unix)"
 }

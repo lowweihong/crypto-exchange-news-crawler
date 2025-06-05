@@ -1,6 +1,27 @@
-# Crypto Exchange News Crawler
+# Cryptocurrency Exchange News Crawler | Bybit Binance Bitget Announcement Scraper
 
-A Scrapy-based web crawler designed to collect announcement news from various cryptocurrency exchanges. This project currently supports Bitfinex and Bitget exchanges and can be easily extended to include other exchanges.
+A comprehensive **Scrapy-based web crawler** for **cryptocurrency exchange announcements**. This **crypto news scraper** automatically collects **trading announcements**, **listing news**, and **platform updates** from major **crypto exchanges** including **Bybit**, **Binance**, **Bitget**, **XT**, and **Bitfinex**.
+
+🔍 **Keywords**: crypto exchange crawler, bybit announcement scraper, binance news crawler, cryptocurrency announcement bot, trading news scraper, crypto listing alerts
+
+## 🚀 Features
+
+- **Multi-Exchange Support**: Crawls announcements from 5+ major cryptocurrency exchanges
+- **Real-time Data**: Extracts latest announcements with timestamps
+- **Structured Output**: Clean JSON format for easy integration
+- **Scalable Architecture**: Easy to extend for additional exchanges
+- **Rate Limiting**: Respectful crawling with configurable delays
+- **Proxy Support**: Built-in proxy rotation capabilities
+
+## 📊 Supported Cryptocurrency Exchanges
+
+| Exchange | Status | Announcement Types |
+|----------|--------|--------------------|
+| **Bybit** ✅ | Active | Trading announcements, new listings, platform updates |
+| **Binance** ✅ | Active | New coin listings, trading pairs, system updates |
+| **Bitget** ✅ | Active | Futures listings, spot trading, platform news |
+| **XT Exchange** ✅ | Active | Token listings, trading announcements |
+| **Bitfinex** ✅ | Active | Trading updates, new assets, platform changes |
 
 ## Project Description
 
@@ -21,9 +42,17 @@ This project crawls announcement news from cryptocurrency exchanges to help user
 - **XT**
 - **Bitfinex** 
 
+## 🎯 Use Cases
 
+- **Trading Bots**: Feed announcement data to automated trading systems
+- **Market Research**: Analyze exchange listing patterns and trends  
+- **News Aggregation**: Build crypto news platforms and alert systems
+- **Academic Research**: Study cryptocurrency market announcements
+- **Investment Tools**: Track new token listings across exchanges
 
-## Installation
+## 🔧 Quick Start
+
+### Installation
 
 1. Clone the repository:
 ```bash
@@ -47,65 +76,34 @@ pip install -r requirements.txt
 playwright install chromium
 ```
 
-## Usage
+### Running Specific Exchange Crawlers
 
-### Running the Bitfinex Spider
-
-Supported platform
-1. binance
-2. bybit
-3. bitget
-4. xt
-5. bitfinex
-
-
-Run the below command to crawl:
-
+**Bybit Announcements:**
 ```bash
-scrapy crawl <platform>
+scrapy crawl bybit -o bybit_announcements.json
 ```
 
-### Export to JSON
-
-To save the crawled data to a JSON file:
-
+**Binance News:**
 ```bash
-scrapy crawl bitfinex -o bitfinex_news.json
-scrapy crawl bitget -o bitget_news.json
+scrapy crawl binance -o binance_news.json  
 ```
 
-### Custom Settings
-
-You can override settings from the command line:
-
+**Bitget Updates:**
 ```bash
-scrapy crawl bitget -s MAX_PAGE=5 -s DOWNLOAD_DELAY=2
+scrapy crawl bitget -o bitget_updates.json
 ```
 
-## Configuration
+**All Exchanges:**
+```bash
+# Crawl all exchanges sequentially
+for exchange in bybit binance bitget xt bitfinex; do
+    scrapy crawl $exchange -o "${exchange}_announcements_$(date +%Y%m%d).json"
+done
+```
 
-Key settings in `settings.py`:
+## 📋 Data Schema
 
-- `MAX_PAGE`: Maximum number of pages to crawl (default: 2)
-- `DOWNLOAD_DELAY`: Delay between requests in seconds (default: 3)
-- `CONCURRENT_REQUESTS`: Number of concurrent requests (default: 8)
-- `USER_AGENT`: List of user agents for rotation
-- `PROXY_LIST`: Fill the list with your proxy list and remember also to open uncomment the DOWNLOADER_MIDDLEWARES part to use the proxy middleware
-- `PLAYWRIGHT_LAUNCH_OPTIONS`: Browser configuration for Playwright spiders
-
-## Example website
-
-Example link for each crypto exchange:
-
-1. Bitget: https://www.bitget.com/support/sections/12508313443483
-2. Bitfinex: https://www.bitfinex.com/posts/
-3. XT: https://xtsupport.zendesk.com/hc/en-us/categories/10304894611993-Important-Announcements
-4. Bybit: https://announcements.bybit.com/en/?category=&page=1
-5. Binance: https://www.binance.com/en/support/announcement
-
-## Data Structure
-
-Each news item contains the following fields:
+Each announcement contains structured data perfect for analysis:
 
 ```json
 {
@@ -120,14 +118,49 @@ Each news item contains the following fields:
 }
 ```
 
-## Technical Requirements
+## ⚙️ Configuration
+
+Key settings in `settings.py`:
+
+- `MAX_PAGE`: Maximum number of pages to crawl (default: 2)
+- `DOWNLOAD_DELAY`: Delay between requests in seconds (default: 3)
+- `CONCURRENT_REQUESTS`: Number of concurrent requests (default: 8)
+- `USER_AGENT`: List of user agents for rotation
+- `PROXY_LIST`: Fill the list with your proxy list and remember also to open uncomment the DOWNLOADER_MIDDLEWARES part to use the proxy middleware
+- `PLAYWRIGHT_LAUNCH_OPTIONS`: Browser configuration for Playwright spiders
+
+### Custom Settings
+
+You can override settings from the command line:
+
+```bash
+scrapy crawl bitget -s MAX_PAGE=5 -s DOWNLOAD_DELAY=2
+```
+
+## 🔧 Technical Requirements
 
 - Python 3.7+
 - Scrapy 2.11.0+
 - Playwright (for Bitget spider)
 - Chromium browser (automatically installed with Playwright)
 
-## Legal Notice
+## 🌐 Exchange URLs
+
+Direct links to announcement pages:
+
+| Exchange | Announcement URL |
+|----------|------------------|
+| **Bybit** | https://announcements.bybit.com/en/?category=&page=1 |
+| **Binance** | https://www.binance.com/en/support/announcement |
+| **Bitget** | https://www.bitget.com/support/sections/12508313443483 |
+| **XT** | https://xtsupport.zendesk.com/hc/en-us/categories/10304894611993-Important-Announcements |
+| **Bitfinex** | https://www.bitfinex.com/posts/ |
+
+## 🏷️ Tags
+
+`cryptocurrency` `crypto-exchange` `web-scraping` `scrapy` `bybit` `binance` `bitget` `announcements` `trading-bot` `crypto-news` `python` `exchange-api` `market-data` `crypto-crawler` `news-scraper`
+
+## ⚖️ Legal & Ethical Usage
 
 This crawler is designed for educational and research purposes. Please ensure you comply with:
 
@@ -137,6 +170,14 @@ This crawler is designed for educational and research purposes. Please ensure yo
 - Fair use guidelines
 
 Always use the crawler responsibly and consider the impact on the target servers.
+
+## 🤝 Contributing
+
+Contributions welcome! Areas for improvement:
+- Add support for more exchanges (OKX, Huobi, KuCoin, etc.)
+- Implement real-time WebSocket feeds
+- Add telegram/discord notification integrations
+- Improve data parsing and categorization
 
 ## Support
 

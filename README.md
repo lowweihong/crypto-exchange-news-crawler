@@ -15,6 +15,7 @@ This project crawls announcement news from cryptocurrency exchanges to help user
 
 ## Currently Supported Exchanges
 
+- **Binance**
 - **Bybit**
 - **Bitget**
 - **XT**
@@ -51,10 +52,11 @@ playwright install chromium
 ### Running the Bitfinex Spider
 
 Supported platform
-1. bybit
-2. bitget
-3. xt
-4. bitfinex
+1. binance
+2. bybit
+3. bitget
+4. xt
+5. bitfinex
 
 
 Run the below command to crawl:
@@ -99,6 +101,7 @@ Example link for each crypto exchange:
 2. Bitfinex: https://www.bitfinex.com/posts/
 3. XT: https://xtsupport.zendesk.com/hc/en-us/categories/10304894611993-Important-Announcements
 4. Bybit: https://announcements.bybit.com/en/?category=&page=1
+5. Binance: https://www.binance.com/en/support/announcement
 
 ## Data Structure
 
@@ -111,7 +114,7 @@ Each news item contains the following fields:
     "desc": "News description/content",
     "url": "Full URL to the news article",
     "category_str": "News category (detailed for Bitget)",
-    "exchange": "Exchange name ('bitfinex' or 'bitget' or 'xt' or 'bybit)",
+    "exchange": "Exchange name ('bitfinex' or 'bitget' or 'xt' or 'bybit', or 'binance')",
     "announced_at_timestamp": "Original publication timestamp (Unix)",
     "timestamp": "Crawl timestamp (Unix)"
 }

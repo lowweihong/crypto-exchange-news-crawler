@@ -1,8 +1,9 @@
 import scrapy
 import random
 import json
-from scrapy.utils.project import get_project_settings
 import time
+import copy
+from scrapy.utils.project import get_project_settings
 from urllib.parse import urlencode
 
 
@@ -62,7 +63,7 @@ class BitfinexSpider(scrapy.Spider):
             last_id = data[-1][0]  # Get ID from last element
 
             # Update params with the ID for next page
-            next_params = params.copy()
+            next_params = copy.deepcopy(params)
             next_params["id"] = last_id
 
             yield scrapy.Request(

@@ -8,10 +8,10 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
 
 setup(
     name="crypto-exchange-news-crawler",
-    version="0.0.2",
+    version="0.0.3",
     author="lowweihong",
-    author_email="lowweihong@gmail.com",
-    description="Cryptocurrency exchange announcement news crawler for Bybit, Binance, Bitget, XT, and Bitfinex",
+    author_email="lowweihong14@gmail.com",
+    description="Cryptocurrency exchange announcement news crawler for major crypto exchanges",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/lowweihong/crypto-exchange-news-crawler",

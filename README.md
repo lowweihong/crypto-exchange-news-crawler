@@ -6,7 +6,7 @@ A comprehensive **Scrapy-based web crawler** for **cryptocurrency exchange annou
 
 ## 🚀 Features
 
-- **Multi-Exchange Support**: Crawls announcements from 5+ major cryptocurrency exchanges
+- **Multi-Exchange Support**: Crawls announcements from major cryptocurrency exchanges
 - **Real-time Data**: Extracts latest announcements with timestamps
 - **Structured Output**: Clean JSON format for easy integration
 - **Scalable Architecture**: Easy to extend for additional exchanges
@@ -91,14 +91,6 @@ scrapy crawl binance -o binance_news.json
 **Bitget Updates:**
 ```bash
 scrapy crawl bitget -o bitget_updates.json
-```
-
-**All Exchanges:**
-```bash
-# Crawl all exchanges sequentially
-for exchange in bybit binance bitget xt bitfinex; do
-    scrapy crawl $exchange -o "${exchange}_announcements_$(date +%Y%m%d).json"
-done
 ```
 
 ## 📋 Data Schema

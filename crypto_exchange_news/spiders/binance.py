@@ -51,7 +51,7 @@ class BinanceSpider(scrapy.Spider):
         for item in response.json()["data"]["catalogs"]:
             for cat_item in item['articles']:
                 data =  {
-                    'news_id': cat_item['id'],
+                    'news_id': cat_item['code'],
                     'title': cat_item['title'],
                     'desc': '',
                     'url': response.urljoin(cat_item['code']),

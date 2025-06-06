@@ -5,3 +5,4 @@ crytpo_exchange_news/__pycache__
 *.xlsx
 *.pyc
 .DS_Store
+*.egg-info/

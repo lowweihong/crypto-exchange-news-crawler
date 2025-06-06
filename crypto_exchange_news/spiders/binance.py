@@ -54,7 +54,7 @@ class BinanceSpider(scrapy.Spider):
                     'news_id': cat_item['code'],
                     'title': cat_item['title'],
                     'desc': '',
-                    'url': response.urljoin(cat_item['code']),
+                    'url': 'https://www.binance.com/en/support/announcement/detail/'+ cat_item['code'],
                     'category_str': item['catalogName'],
                     'exchange': self.name,
                     'announced_at_timestamp': cat_item['releaseDate']//1000,

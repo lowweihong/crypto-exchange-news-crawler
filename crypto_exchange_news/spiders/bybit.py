@@ -55,7 +55,7 @@ class BybitSpider(scrapy.Spider):
                 "news_id": r["url"].split("-")[-1].replace("/", ""),
                 "title": r["title"],
                 "desc": r["description"],
-                "url": response.urljoin(r["url"]),
+                "url": "https://announcements.bybit.com" + r["url"],
                 "category_str": r["category"]["key"],
                 "exchange": self.name,
                 "announced_at_timestamp": int(r["date_timestamp"]),

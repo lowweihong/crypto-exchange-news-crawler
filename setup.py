@@ -1,18 +1,24 @@
 from setuptools import setup, find_packages
+import os
 
-with open("README.md", "r", encoding="utf-8") as fh:
-    long_description = fh.read()
+# Read README file
+def read_readme():
+    with open("README.md", "r", encoding="utf-8") as fh:
+        return fh.read()
 
-with open("requirements.txt", "r", encoding="utf-8") as fh:
-    requirements = [line.strip() for line in fh if line.strip() and not line.startswith("#")]
+# Read requirements file
+def read_requirements():
+    with open("requirements.txt", "r", encoding="utf-8") as fh:
+        return [line.strip() for line in fh if line.strip() and not line.startswith("#")]
+    
 
 setup(
     name="crypto_exchange_news_crawler",
-    version="0.0.1",
+    version="0.1.1",
     author="lowweihong",
     author_email="lowweihong14@gmail.com",
     description="Cryptocurrency exchange announcement news crawler for major crypto exchanges",
-    long_description=long_description,
+    long_description=read_readme(),
     long_description_content_type="text/markdown",
     url="https://github.com/lowweihong/crypto_exchange_news_crawler",
     packages=find_packages(),
@@ -23,7 +29,7 @@ setup(
         "fintech", "blockchain", "defi", "trading-bot", "crypto-news"
     ],
     python_requires=">=3.7",
-    install_requires=requirements,
+    install_requires=read_requirements(),
     project_urls={
         "Bug Reports": "https://github.com/lowweihong/crypto-exchange-news-crawler/issues",
         "Source": "https://github.com/lowweihong/crypto-exchange-news-crawler",
@@ -31,4 +37,8 @@ setup(
     },
     include_package_data=True,
     zip_safe=False,
+    package_data={
+        "crypto_exchange_news": ["*.cfg"],
+        "": ["scrapy.cfg", "requirements.txt"],
+    },
 ) 

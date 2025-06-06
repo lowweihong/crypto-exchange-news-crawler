@@ -12,7 +12,10 @@ class MyProxyMiddleware(RetryMiddleware):
     def __init__(self, crawler, proxy_list):
         super(MyProxyMiddleware, self).__init__(crawler.settings)
         self.crawler = crawler
-        self.proxies = proxy_list
+        if isinstance(proxy_list, str):
+            self.proxies = [p.strip() for p in proxy_list.split(',')]
+        else:
+            self.proxies = proxy_list
 
     @classmethod
     def from_crawler(cls, crawler):

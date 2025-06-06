@@ -1,112 +1,65 @@
-# Cryptocurrency Exchange News Crawler | Bybit Binance Bitget Announcement Scraper
+# Crypto Exchange News Crawler 🚀
 
-A comprehensive **Scrapy-based web crawler** for **cryptocurrency exchange announcements**. This **crypto news scraper** automatically collects **trading announcements**, **listing news**, and **platform updates** from major **crypto exchanges**.
+A powerful and easy-to-use Python package for scraping cryptocurrency exchange announcements from major exchanges.
 
-## 🚀 Features
+## 🎯 Features
 
-- **Multi-Exchange Support**: Crawls announcements from major cryptocurrency exchanges
-- **Real-time Data**: Extracts latest announcements with timestamps
-- **Structured Output**: Clean JSON format for easy integration
-- **Scalable Architecture**: Easy to extend for additional exchanges
-- **Rate Limiting**: Respectful crawling with configurable delays
-- **Proxy Support**: Built-in proxy rotation capabilities
+- **Multi-Exchange Support**: Scrape from 6 major crypto exchanges
+- **Multiple Output Formats**: JSON, CSV, and XML support
+- **Structured Data**: Clean, standardized output format
+- **Rate Limiting**: Built-in delays to respect exchange servers
+- **Extensible**: Easy to add new exchanges
 
-## 📊 Supported Cryptocurrency Exchanges
+## 📦 Installation Options
 
-| Exchange | Status | Announcement Types |
-|----------|--------|--------------------|
-| **Binance** ✅ | Active | New coin listings, trading pairs, system updates |
-| **OKX** ✅ | Active | Trading updates, new assets, platform changes |
-| **Bybit** ✅ | Active | Trading announcements, new listings, platform updates |
-| **Bitget** ✅ | Active | Futures listings, spot trading, platform news |
-| **XT Exchange** ✅ | Active | Token listings, trading announcements |
-| **Bitfinex** ✅ | Active | Trading updates, new assets, platform changes |
+### Option 1: Direct Usage
 
-## Project Description
-
-This project crawls announcement news from cryptocurrency exchanges to help users stay updated with the latest developments, updates, and announcements from major crypto trading platforms. The crawler extracts key information including:
-
-- News title and description
-- Publication timestamp
-- News URL
-- Exchange source
-- Unique news ID
-- News categories (where available)
-
-## Currently Supported Exchanges
-
-- **Binance**
-- **OKX**
-- **Bybit**
-- **Bitget**
-- **XT**
-- **Bitfinex** 
-
-## 🎯 Use Cases
-
-- **Trading Bots**: Feed announcement data to automated trading systems
-- **Market Research**: Analyze exchange listing patterns and trends  
-- **News Aggregation**: Build crypto news platforms and alert systems
-- **Academic Research**: Study cryptocurrency market announcements
-- **Investment Tools**: Track new token listings across exchanges
-
-## 🔧 Quick Start
-
-### Installation
-
-1. Clone the repository:
 ```bash
 git clone https://github.com/lowweihong/crypto-exchange-news-crawler.git
-cd crypto_exchange_news
-```
-
-2. Create a virtual environment (recommended):
-```bash
+cd crypto-exchange-news-crawler
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
-
-3. Install dependencies:
-```bash
 pip install -r requirements.txt
-```
-
-4. Install Playwright browsers (required for Bitget spider):
-```bash
 playwright install chromium
+scrapy crawl bybit -o output.json
 ```
 
-### Running Specific Exchange Crawlers
+### Option 2: Install from PyPI
 
-**Bybit Announcements:**
 ```bash
-scrapy crawl bybit -o bybit_announcements.json
+pip install crypto-exchange-news-crawler
+
+## directly use proxy and uncomment DOWNLOADER_MIDDLEWARES
+scrapy crawl bybit -s DOWNLOADER_MIDDLEWARES='{"crypto_exchange_news.middlewares.MyProxyMiddleware": 610}' -s PROXY_LIST="http://proxy1:port,http://proxy2:port"
 ```
 
-**Binance News:**
-```bash
-scrapy crawl binance -o binance_news.json  
-```
+### Supported Exchanges
 
-**Bitget Updates:**
-```bash
-scrapy crawl bitget -o bitget_updates.json
-```
+| Exchange | Status |
+|----------|--------|
+| Bybit    | ✅ |
+| Binance  | ✅ |
+| OKX      | ✅ |
+| Bitget   | ✅ |
+| Bitfinex | ✅ |
+| XT       | ✅ |
 
-## 📋 Data Schema
+#
 
-Each announcement contains structured data perfect for analysis:
+## 📊 Output Format
+
+Each scraped announcement includes:
 
 ```json
 {
-    "news_id": "Unique identifier from the exchange",
-    "title": "News headline",
-    "desc": "News description/content",
-    "url": "Full URL to the news article",
-    "category_str": "News category (detailed for Bitget)",
-    "exchange": "Exchange name ('bitfinex' or 'bitget' or 'xt' or 'bybit', or 'binance')",
-    "announced_at_timestamp": "Original publication timestamp (Unix)",
-    "timestamp": "Crawl timestamp (Unix)"
+    "news_id": "unique_identifier",
+    "title": "Announcement title",
+    "desc": "Announcement description",
+    "url": "Full URL to announcement",
+    "category_str": "Category (e.g., latest_activities, new_crypto)",
+    "exchange": "Exchange name",
+    "announced_at_timestamp": 1749235200,
+    "timestamp": 1749232733
 }
 ```
 

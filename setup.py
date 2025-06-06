@@ -8,7 +8,7 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
 
 setup(
     name="crypto-exchange-news-crawler",
-    version="0.0.3",
+    version="0.0.4",
     author="lowweihong",
     author_email="lowweihong14@gmail.com",
     description="Cryptocurrency exchange announcement news crawler for major crypto exchanges",
@@ -18,7 +18,7 @@ setup(
     packages=find_packages(),
     keywords=[
         "cryptocurrency", "crypto", "exchange", "news", "crawler", "scraper",
-        "bybit", "binance", "bitget", "bitfinex", "xt", "announcements",
+        "bybit", "binance", "bitget", "bitfinex", "xt", "okx", "announcements",
         "trading", "bot", "api", "scrapy", "web-scraping", "market-data",
         "fintech", "blockchain", "defi", "trading-bot", "crypto-news"
     ],

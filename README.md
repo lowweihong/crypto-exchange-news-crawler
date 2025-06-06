@@ -1,8 +1,6 @@
 # Cryptocurrency Exchange News Crawler | Bybit Binance Bitget Announcement Scraper
 
-A comprehensive **Scrapy-based web crawler** for **cryptocurrency exchange announcements**. This **crypto news scraper** automatically collects **trading announcements**, **listing news**, and **platform updates** from major **crypto exchanges** including **Bybit**, **Binance**, **Bitget**, **XT**, and **Bitfinex**.
-
-🔍 **Keywords**: crypto exchange crawler, bybit announcement scraper, binance news crawler, cryptocurrency announcement bot, trading news scraper, crypto listing alerts
+A comprehensive **Scrapy-based web crawler** for **cryptocurrency exchange announcements**. This **crypto news scraper** automatically collects **trading announcements**, **listing news**, and **platform updates** from major **crypto exchanges**.
 
 ## 🚀 Features
 
@@ -17,8 +15,9 @@ A comprehensive **Scrapy-based web crawler** for **cryptocurrency exchange annou
 
 | Exchange | Status | Announcement Types |
 |----------|--------|--------------------|
-| **Bybit** ✅ | Active | Trading announcements, new listings, platform updates |
 | **Binance** ✅ | Active | New coin listings, trading pairs, system updates |
+| **OKX** ✅ | Active | Trading updates, new assets, platform changes |
+| **Bybit** ✅ | Active | Trading announcements, new listings, platform updates |
 | **Bitget** ✅ | Active | Futures listings, spot trading, platform news |
 | **XT Exchange** ✅ | Active | Token listings, trading announcements |
 | **Bitfinex** ✅ | Active | Trading updates, new assets, platform changes |
@@ -37,6 +36,7 @@ This project crawls announcement news from cryptocurrency exchanges to help user
 ## Currently Supported Exchanges
 
 - **Binance**
+- **OKX**
 - **Bybit**
 - **Bitget**
 - **XT**
@@ -142,15 +142,13 @@ Direct links to announcement pages:
 
 | Exchange | Announcement URL |
 |----------|------------------|
-| **Bybit** | https://announcements.bybit.com/en/?category=&page=1 |
 | **Binance** | https://www.binance.com/en/support/announcement |
+| **OKX** | https://www.okx.com/help/category/announcements |
+| **Bybit** | https://announcements.bybit.com/en/?category=&page=1 |
 | **Bitget** | https://www.bitget.com/support/sections/12508313443483 |
 | **XT** | https://xtsupport.zendesk.com/hc/en-us/categories/10304894611993-Important-Announcements |
 | **Bitfinex** | https://www.bitfinex.com/posts/ |
 
-## 🏷️ Tags
-
-`cryptocurrency` `crypto-exchange` `web-scraping` `scrapy` `bybit` `binance` `bitget` `announcements` `trading-bot` `crypto-news` `python` `exchange-api` `market-data` `crypto-crawler` `news-scraper`
 
 ## ⚖️ Legal & Ethical Usage
 
@@ -166,7 +164,7 @@ Always use the crawler responsibly and consider the impact on the target servers
 ## 🤝 Contributing
 
 Contributions welcome! Areas for improvement:
-- Add support for more exchanges (OKX, Huobi, KuCoin, etc.)
+- Add support for more exchanges (Huobi, KuCoin, Gateio, etc.)
 - Implement real-time WebSocket feeds
 - Add telegram/discord notification integrations
 - Improve data parsing and categorization

@@ -14,7 +14,7 @@ setup(
     description="Cryptocurrency exchange announcement news crawler for major crypto exchanges",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/lowweihong/crypto-exchange-news-crawler",
+    url="https://github.com/lowweihong/crypto_exchange_news_crawler",
     packages=find_packages(),
     keywords=[
         "cryptocurrency", "crypto", "exchange", "news", "crawler", "scraper",
@@ -24,11 +24,6 @@ setup(
     ],
     python_requires=">=3.7",
     install_requires=requirements,
-    entry_points={
-        "console_scripts": [
-            "crypto-crawler=crypto_exchange_news.cli:main",
-        ],
-    },
     project_urls={
         "Bug Reports": "https://github.com/lowweihong/crypto-exchange-news-crawler/issues",
         "Source": "https://github.com/lowweihong/crypto-exchange-news-crawler",

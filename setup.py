@@ -14,7 +14,7 @@ def read_requirements():
 
 setup(
     name="crypto_exchange_news_crawler",
-    version="0.1.1",
+    version="0.1.2",
     author="lowweihong",
     author_email="lowweihong14@gmail.com",
     description="Cryptocurrency exchange announcement news crawler for major crypto exchanges",
@@ -22,6 +22,21 @@ setup(
     long_description_content_type="text/markdown",
     url="https://github.com/lowweihong/crypto_exchange_news_crawler",
     packages=find_packages(),
+    classifiers=[
+        "Development Status :: 4 - Beta",
+        "Intended Audience :: Developers",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
+        "Topic :: Software Development :: Libraries :: Python Modules",
+        "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
+        "Topic :: Office/Business :: Financial",
+    ],
     keywords=[
         "cryptocurrency", "crypto", "exchange", "news", "crawler", "scraper",
         "bybit", "binance", "bitget", "bitfinex", "xt", "okx", "announcements",
@@ -38,7 +53,13 @@ setup(
     include_package_data=True,
     zip_safe=False,
     package_data={
-        "crypto_exchange_news": ["*.cfg"],
+        "crypto_exchange_news": ["scrapy.cfg"],
         "": ["scrapy.cfg", "requirements.txt"],
+    },
+    # Entry point for the CLI command
+    entry_points={
+        'console_scripts': [
+            'crypto-news=crypto_exchange_news.cli:main',
+        ],
     },
 ) 

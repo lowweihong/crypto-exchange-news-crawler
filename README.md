@@ -44,6 +44,7 @@ crypto-news crawl bybit -s DOWNLOADER_MIDDLEWARES='{"crypto_exchange_news.middle
 | Binance  | ✅ |
 | OKX      | ✅ |
 | Bitget   | ✅ |
+| BingX    | ✅ |
 | Bitfinex | ✅ |
 | XT       | ✅ |
 
@@ -102,6 +103,7 @@ Direct links to announcement pages:
 | **OKX** | https://www.okx.com/help/category/announcements |
 | **Bybit** | https://announcements.bybit.com/en/?category=&page=1 |
 | **Bitget** | https://www.bitget.com/support/sections/12508313443483 |
+| **BingX** | https://bingx.com/en/support/notice-center/ |
 | **XT** | https://xtsupport.zendesk.com/hc/en-us/categories/10304894611993-Important-Announcements |
 | **Bitfinex** | https://www.bitfinex.com/posts/ |
 
@@ -110,8 +112,6 @@ Direct links to announcement pages:
 
 This crawler is designed for educational and research purposes. Please ensure you comply with:
 
-- Each exchange's Terms of Service
-- Rate limiting and robots.txt policies
 - Applicable data protection laws
 - Fair use guidelines
 

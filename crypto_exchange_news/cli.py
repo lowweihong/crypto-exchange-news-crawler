@@ -14,6 +14,8 @@ from scrapy.crawler import CrawlerProcess
 from scrapy.utils.project import get_project_settings
 import json
 
+available_spiders = ["bybit", "binance", "okx", "bitget", "bitfinex", "xt", "bingx"]
+
 
 def get_spider_classes():
     """Get all available spider classes"""
@@ -28,6 +30,7 @@ def get_spider_classes():
             bitget,
             bitfinex,
             xt,
+            bingx
         )
 
         spider_classes["bybit"] = bybit.BybitSpider
@@ -36,7 +39,8 @@ def get_spider_classes():
         spider_classes["bitget"] = bitget.BitgetSpider
         spider_classes["bitfinex"] = bitfinex.BitfinexSpider
         spider_classes["xt"] = xt.XtSpider
-
+        spider_classes["bingx"] = bingx.BingxSpider
+        
     except ImportError as e:
         print(f"❌ Error importing spiders: {e}")
         # For debugging, let's also print the current working directory
@@ -162,8 +166,6 @@ def run_spider(spider_name, output_file=None, custom_settings=None, spider_args=
 def list_spiders():
     """List all available spiders"""
     try:
-        # Instead of relying on imports, let's use a hardcoded list since we know what spiders we have
-        available_spiders = ["bybit", "binance", "okx", "bitget", "bitfinex", "xt"]
 
         print("📋 Available exchanges:")
         for spider_name in sorted(available_spiders):
@@ -175,7 +177,6 @@ def list_spiders():
 
 def validate_spider_name(spider_name):
     """Validate if the spider name is supported"""
-    available_spiders = ["bybit", "binance", "okx", "bitget", "bitfinex", "xt"]
     return spider_name in available_spiders
 
 
@@ -245,7 +246,6 @@ def main():
         if not validate_spider_name(args.exchange):
             print(f"❌ Unknown exchange: {args.exchange}")
             print("📋 Available exchanges:")
-            available_spiders = ["bybit", "binance", "okx", "bitget", "bitfinex", "xt"]
             for spider_name in sorted(available_spiders):
                 print(f"  • {spider_name}")
             sys.exit(1)

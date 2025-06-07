@@ -20,7 +20,7 @@ cd crypto-exchange-news-crawler
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
-playwright install chromium
+playwright install
 scrapy crawl bybit -o output.json
 ```
 
@@ -28,6 +28,7 @@ scrapy crawl bybit -o output.json
 
 ```bash
 pip install crypto-exchange-news-crawler
+playwright install
 
 ## directly use proxy and uncomment DOWNLOADER_MIDDLEWARES
 crypto-news crawl binance -o binance.json

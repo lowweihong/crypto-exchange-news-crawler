@@ -30,6 +30,8 @@ scrapy crawl bybit -o output.json
 pip install crypto-exchange-news-crawler
 
 ## directly use proxy and uncomment DOWNLOADER_MIDDLEWARES
+crypto-news crawl binance -o binance.json
+
 crypto-news crawl bybit -s DOWNLOADER_MIDDLEWARES='{"crypto_exchange_news.middlewares.MyProxyMiddleware": 610}' -s PROXY_LIST="http://proxy1:port,http://proxy2:port"
 ```
 

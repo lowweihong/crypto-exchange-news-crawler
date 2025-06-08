@@ -7,14 +7,10 @@ import sys
 import os
 import argparse
 import subprocess
-import tempfile
 from pathlib import Path
-import importlib.util
-from scrapy.crawler import CrawlerProcess
-from scrapy.utils.project import get_project_settings
 import json
 
-available_spiders = ["bybit", "binance", "okx", "bitget", "bitfinex", "xt", "bingx"]
+available_spiders = ["bybit", "binance", "okx", "bitget", "bitfinex", "xt", "bingx", 'kraken']
 
 
 def get_spider_classes():
@@ -30,7 +26,8 @@ def get_spider_classes():
             bitget,
             bitfinex,
             xt,
-            bingx
+            bingx,
+            kraken
         )
 
         spider_classes["bybit"] = bybit.BybitSpider
@@ -40,6 +37,7 @@ def get_spider_classes():
         spider_classes["bitfinex"] = bitfinex.BitfinexSpider
         spider_classes["xt"] = xt.XtSpider
         spider_classes["bingx"] = bingx.BingxSpider
+        spider_classes["kraken"] = kraken.KrakenSpider
         
     except ImportError as e:
         print(f"❌ Error importing spiders: {e}")
@@ -190,10 +188,9 @@ def main():
             crypto-news crawl bybit                                   # Scrape Bybit announcements
             crypto-news crawl binance -o my_file.json                 # Scrape Binance to custom file
             crypto-news crawl okx -f csv                              # Scrape OKX and save as CSV
-            crypto-news crawl bybit -s CONCURRENT_REQUESTS=16         # Set concurrent requests
-            crypto-news crawl bybit -s DOWNLOAD_DELAY=1               # Set download delay
-            crypto-news crawl bybit -s 'DOWNLOADER_MIDDLEWARES={"crypto_exchange_news.middlewares.MyProxyMiddleware": 610}'
-            crypto-news crawl bybit -a category=new_crypto            # Pass spider argument
+            crypto-news crawl xt -s CONCURRENT_REQUESTS=16         # Set concurrent requests
+            crypto-news crawl kraken -s DOWNLOAD_DELAY=1               # Set download delay
+            crypto-news crawl bingx -s 'DOWNLOADER_MIDDLEWARES={"crypto_exchange_news.middlewares.MyProxyMiddleware": 610}'
             crypto-news list                                          # List all available exchanges
         """,
     )

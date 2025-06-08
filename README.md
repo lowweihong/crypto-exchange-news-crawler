@@ -21,6 +21,7 @@ python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 playwright install
+
 scrapy crawl bybit -o output.json
 ```
 
@@ -45,9 +46,13 @@ crypto-news crawl bybit -s DOWNLOADER_MIDDLEWARES='{"crypto_exchange_news.middle
 | OKX      | ✅ |
 | Bitget   | ✅ |
 | BingX    | ✅ |
+| Kraken   | ✅ |
 | Bitfinex | ✅ |
 | XT       | ✅ |
 
+```
+Available options : ["bybit", "binance", "okx", "bitget", "bitfinex", "xt", "bingx", 'kraken']
+```
 #
 
 ## 📊 Output Format
@@ -104,8 +109,10 @@ Direct links to announcement pages:
 | **Bybit** | https://announcements.bybit.com/en/?category=&page=1 |
 | **Bitget** | https://www.bitget.com/support/sections/12508313443483 |
 | **BingX** | https://bingx.com/en/support/notice-center/ |
+| **Kraken** | https://blog.kraken.com/category/product |
 | **XT** | https://xtsupport.zendesk.com/hc/en-us/categories/10304894611993-Important-Announcements |
 | **Bitfinex** | https://www.bitfinex.com/posts/ |
+
 
 
 ## ⚖️ Legal & Ethical Usage

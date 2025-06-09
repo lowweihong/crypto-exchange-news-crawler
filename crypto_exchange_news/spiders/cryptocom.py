@@ -35,7 +35,7 @@ class CryptocomSpider(scrapy.Spider):
                 'news_id': r['id'],
                 'title': r['title'],
                 'desc': r['content'],
-                'url': "https://crypto.com/exchange/announcements/list/%s"%r['id'],
+                'url': "https://crypto.com/exchange/announcements/%s/%s"%(r['category'],r['id']),
                 'category_str': r['category']+'.'+r['productType'],
                 'exchange': 'crypto.com',
                 'announced_at_timestamp': r['announcedAt']//1000,

@@ -4,7 +4,7 @@ A powerful and easy-to-use Python package for scraping cryptocurrency exchange a
 
 ## 🎯 Features
 
-- **Multi-Exchange Support**: Scrape from 6 major crypto exchanges
+- **Multi-Exchange Support**: Scrape from 9 major crypto exchanges
 - **Multiple Output Formats**: JSON, CSV, and XML support
 - **Structured Data**: Clean, standardized output format
 - **Rate Limiting**: Built-in delays to respect exchange servers
@@ -49,9 +49,10 @@ crypto-news crawl bybit -s DOWNLOADER_MIDDLEWARES='{"crypto_exchange_news.middle
 | Kraken   | ✅ |
 | Bitfinex | ✅ |
 | XT       | ✅ |
+|Crypto.com| ✅ |
 
 ```
-Available options : ["bybit", "binance", "okx", "bitget", "bitfinex", "xt", "bingx", 'kraken']
+Available options : ["bybit", "binance", "okx", "bitget", "bitfinex", "xt", "bingx", 'kraken', 'cryptocom']
 ```
 #
 
@@ -112,6 +113,7 @@ Direct links to announcement pages:
 | **Kraken** | https://blog.kraken.com/category/product |
 | **XT** | https://xtsupport.zendesk.com/hc/en-us/categories/10304894611993-Important-Announcements |
 | **Bitfinex** | https://www.bitfinex.com/posts/ |
+| **Crypto.com** | https://crypto.com/exchange/announcements |
 
 
 

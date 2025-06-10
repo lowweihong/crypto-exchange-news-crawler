@@ -39,20 +39,21 @@ crypto-news crawl bybit -s DOWNLOADER_MIDDLEWARES='{"crypto_exchange_news.middle
 
 ### Supported Exchanges
 
-| Exchange | Status |
-|----------|--------|
-| Bybit    | ✅ |
-| Binance  | ✅ |
-| OKX      | ✅ |
-| Bitget   | ✅ |
-| BingX    | ✅ |
-| Kraken   | ✅ |
-| Bitfinex | ✅ |
-| XT       | ✅ |
-|Crypto.com| ✅ |
+| Exchange  | Status |
+|-----------|--------|
+| Bybit     | ✅ |
+| Binance   | ✅ |
+| OKX       | ✅ |
+| Bitget    | ✅ |
+| BingX     | ✅ |
+| Kraken    | ✅ |
+| Bitfinex  | ✅ |
+| XT        | ✅ |
+| Crypto.com| ✅ |
+| MEXC      | ✅ |
 
 ```
-Available options : ["bybit", "binance", "okx", "bitget", "bitfinex", "xt", "bingx", 'kraken', 'cryptocom']
+Available options : ["bybit", "binance", "okx", "bitget", "bitfinex", "xt", "bingx", 'kraken', 'cryptocom', 'mexc']
 ```
 #
 
@@ -114,6 +115,7 @@ Direct links to announcement pages:
 | **XT** | https://xtsupport.zendesk.com/hc/en-us/categories/10304894611993-Important-Announcements |
 | **Bitfinex** | https://www.bitfinex.com/posts/ |
 | **Crypto.com** | https://crypto.com/exchange/announcements |
+| **MEXC** | https://www.mexc.com/support/categories/360000254192 |
 
 
 

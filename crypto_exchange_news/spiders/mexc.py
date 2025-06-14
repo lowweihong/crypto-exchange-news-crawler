@@ -72,9 +72,9 @@ class MexcSpider(scrapy.Spider):
             }
         cur_page = int(response.meta["page"])
         if (cur_page < int(self.settings.get("MAX_PAGE"))) and (
-            int(res["data"]["pageCount"]) >= int(self.settings["MAX_PAGE"])
+            cur_page < int(res["data"]["pageCount"])
         ):
-            cur_page +=1
+            cur_page += 1
             params = copy.deepcopy(self.params)
             params["page"] = str(cur_page)
             yield scrapy.Request(

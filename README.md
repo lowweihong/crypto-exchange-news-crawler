@@ -51,9 +51,10 @@ crypto-news crawl bybit -s DOWNLOADER_MIDDLEWARES='{"crypto_exchange_news.middle
 | XT        | ✅ |
 | Crypto.com| ✅ |
 | MEXC      | ✅ |
+| Deepcoin  | ✅ |
 
 ```
-Available options : ["bybit", "binance", "okx", "bitget", "bitfinex", "xt", "bingx", 'kraken', 'cryptocom', 'mexc']
+Available options : ["bybit", "binance", "okx", "bitget", "bitfinex", "xt", "bingx", 'kraken', 'cryptocom', 'mexc', 'deepcoin']
 ```
 #
 
@@ -116,6 +117,7 @@ Direct links to announcement pages:
 | **Bitfinex** | https://www.bitfinex.com/posts/ |
 | **Crypto.com** | https://crypto.com/exchange/announcements |
 | **MEXC** | https://www.mexc.com/support/categories/360000254192 |
+| **Deepcoin** | https://support.deepcoin.online/hc/en-001/categories/360003875752-Important-Announcements |
 
 
 

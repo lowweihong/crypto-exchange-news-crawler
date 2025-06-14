@@ -10,7 +10,7 @@ import subprocess
 from pathlib import Path
 import json
 
-available_spiders = ["bybit", "binance", "okx", "bitget", "bitfinex", "xt", "bingx", 'kraken', 'cryptocom','mexc']
+available_spiders = ["bybit", "binance", "okx", "bitget", "bitfinex", "xt", "bingx", 'kraken', 'cryptocom','mexc','deepcoin']
 
 
 def get_spider_classes():
@@ -29,7 +29,8 @@ def get_spider_classes():
             bingx,
             kraken,
             cryptocom,
-            mexc
+            mexc,
+            deepcoin
         )
 
         spider_classes["bybit"] = bybit.BybitSpider
@@ -42,6 +43,7 @@ def get_spider_classes():
         spider_classes["kraken"] = kraken.KrakenSpider
         spider_classes["cryptocom"] = cryptocom.CryptocomSpider
         spider_classes["mexc"] = mexc.MexcSpider
+        spider_classes["deepcoin"] = deepcoin.DeepcoinSpider
         
     except ImportError as e:
         print(f"❌ Error importing spiders: {e}")

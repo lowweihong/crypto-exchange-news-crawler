@@ -4,7 +4,7 @@ A powerful and easy-to-use Python package for scraping cryptocurrency exchange a
 
 ## 🎯 Features
 
-- **Multi-Exchange Support**: Scrape from 9 major crypto exchanges
+- **Multi-Exchange Support**: Scrape from 12 major crypto exchanges
 - **Multiple Output Formats**: JSON, CSV, and XML support
 - **Structured Data**: Clean, standardized output format
 - **Rate Limiting**: Built-in delays to respect exchange servers
@@ -52,9 +52,10 @@ crypto-news crawl bybit -s DOWNLOADER_MIDDLEWARES='{"crypto_exchange_news.middle
 | Crypto.com| ✅ |
 | MEXC      | ✅ |
 | Deepcoin  | ✅ |
+| Kucoin    | ✅ |
 
 ```
-Available options : ["bybit", "binance", "okx", "bitget", "bitfinex", "xt", "bingx", 'kraken', 'cryptocom', 'mexc', 'deepcoin']
+Available options : ["bybit", "binance", "okx", "bitget", "bitfinex", "xt", "bingx", 'kraken', 'cryptocom', 'mexc', 'deepcoin', 'kucoin']
 ```
 #
 
@@ -118,6 +119,7 @@ Direct links to announcement pages:
 | **Crypto.com** | https://crypto.com/exchange/announcements |
 | **MEXC** | https://www.mexc.com/support/categories/360000254192 |
 | **Deepcoin** | https://support.deepcoin.online/hc/en-001/categories/360003875752-Important-Announcements |
+| **Kucoin** | https://www.kucoin.com/announcement |
 
 
 

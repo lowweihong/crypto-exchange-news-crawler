@@ -137,7 +137,7 @@ Always use the crawler responsibly and consider the impact on the target servers
 ## 🤝 Contributing
 
 Contributions welcome! Areas for improvement:
-- Add support for more exchanges (Huobi, KuCoin, Gateio, etc.)
+- Add support for more exchanges (Huobi, Gateio, etc.)
 - Implement real-time WebSocket feeds
 - Add telegram/discord notification integrations
 - Improve data parsing and categorization

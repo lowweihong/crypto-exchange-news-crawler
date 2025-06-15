@@ -14,7 +14,7 @@ def read_requirements():
 
 setup(
     name="crypto_exchange_news_crawler",
-    version="0.1.8",
+    version="0.1.9",
     author="lowweihong",
     author_email="lowweihong14@gmail.com",
     description="Cryptocurrency exchange announcement news crawler for major crypto exchanges",
@@ -40,8 +40,8 @@ setup(
     keywords=[
         "cryptocurrency", "crypto", "exchange", "news", "crawler", "scraper",
         "bybit", "binance", "bitget", "bitfinex", "xt", "okx", "bingx", "kraken", 
-        "crypto.com", "mexc", "deepcoin", "kucoin", "announcement","trading", "bot", "api", "scrapy", 
-        "web-scraping","fintech", "blockchain", "defi", "trading-bot", "crypto-news"
+        "crypto.com", "mexc", "deepcoin", "kucoin", "upbit", "announcement", "trading", 
+        "bot", "api", "scrapy", "web-scraping","fintech", "blockchain", "defi", "trading-bot", "crypto-news"
     ],
     python_requires=">=3.7",
     install_requires=read_requirements(),

@@ -53,9 +53,10 @@ crypto-news crawl bybit -s DOWNLOADER_MIDDLEWARES='{"crypto_exchange_news.middle
 | MEXC      | ✅ |
 | Deepcoin  | ✅ |
 | Kucoin    | ✅ |
+| Upbit     | ✅ |
 
 ```
-Available options : ["bybit", "binance", "okx", "bitget", "bitfinex", "xt", "bingx", 'kraken', 'cryptocom', 'mexc', 'deepcoin', 'kucoin']
+Available options : ["bybit", "binance", "okx", "bitget", "bitfinex", "xt", "bingx", 'kraken', 'cryptocom', 'mexc', 'deepcoin', 'kucoin', 'upbit']
 ```
 #
 
@@ -120,6 +121,7 @@ Direct links to announcement pages:
 | **MEXC** | https://www.mexc.com/support/categories/360000254192 |
 | **Deepcoin** | https://support.deepcoin.online/hc/en-001/categories/360003875752-Important-Announcements |
 | **Kucoin** | https://www.kucoin.com/announcement |
+| **Upbit** | https://sg.upbit.com/service_center/notice |
 
 
 

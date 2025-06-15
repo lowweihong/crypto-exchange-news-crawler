@@ -10,7 +10,7 @@ import subprocess
 from pathlib import Path
 import json
 
-available_spiders = ["bybit", "binance", "okx", "bitget", "bitfinex", "xt", "bingx", 'kraken', 'cryptocom','mexc','deepcoin', 'kucoin']
+available_spiders = ["bybit", "binance", "okx", "bitget", "bitfinex", "xt", "bingx", 'kraken', 'cryptocom','mexc','deepcoin', 'kucoin', 'upbit']
 
 
 def get_spider_classes():
@@ -31,7 +31,8 @@ def get_spider_classes():
             cryptocom,
             mexc,
             deepcoin,
-            kucoin
+            kucoin,
+            upbit
         )
 
         spider_classes["bybit"] = bybit.BybitSpider
@@ -46,6 +47,7 @@ def get_spider_classes():
         spider_classes["mexc"] = mexc.MexcSpider
         spider_classes["deepcoin"] = deepcoin.DeepcoinSpider
         spider_classes["kucoin"] = kucoin.KucoinSpider
+        spider_classes["upbit"] = upbit.UpbitSpider
         
     except ImportError as e:
         print(f"❌ Error importing spiders: {e}")
@@ -232,7 +234,7 @@ def main():
         action="append",
         dest="spider_args",
         metavar="NAME=VALUE",
-        help="Set spider argument (may be repeated). Example: -a category=new_crypto",
+        help="Set spider argument (may be repeated). Example: -a country=th for only upbit crawler",
     )
     crawl_parser.add_argument(
         "--loglevel",
